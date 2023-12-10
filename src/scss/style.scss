@@ -1,3 +1,69 @@
-h2 {
-    color: aqua;
+@import './fonts.scss';
+
+:root {
+    // COLORS
+    --color-purple60: #703BF7;
+    --color-purple65: #8354F8;
+    --color-purple70: #946CF9;
+    --color-purple75: #A685FA;
+    --color-purple90: #DBCEFE;
+    --color-purple95: #EDE7FE;
+    --color-purple97: #F4F0FE;
+    --color-purple99: #FBFAFF;
+    --color-white90: #E4E4E7;
+    --color-white95: #F1F1F3;
+    --color-white97: #F7F7F8;
+    --color-white99: #FCFCFD;
+    --color-grey08: #141414;
+    --color-grey10: #1A1A1A;
+    --color-grey15: #262626;
+    --color-grey20: #333333;
+    --color-grey30: #4D4D4D;
+    --color-grey40: #666666;
+    --color-grey50: #808080;
+    --color-grey60: #999999;
+    --color-yellow: #FFE500;
+}
+
+html {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 18px;
+    color: white;
+    background-color: var(--color-grey08);
+}
+
+body {
+    margin: 0;
+}
+
+.test-container {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: 0.3s;
+    background-color: var(--color-grey60);
+    padding: 0;
+    max-width: 75%;
+    margin: 0 auto;
+    box-shadow: 0px 5px 34px -14px white;
+    div {
+        overflow: hidden;
+    }
+
+    p {
+        text-align: center;
+        margin: 0;
+    }
+
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+button {
+    margin-left: 2rem;
+}
+
+
+.test-container[open="true"] {
+    grid-template-rows: 1fr;
+    padding: 2rem;
 }
