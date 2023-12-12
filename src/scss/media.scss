@@ -6,9 +6,45 @@
     html {
         font-size: 16px;
     }
+    .header__logo {
+        width: 113px;
+    }
+    .push-message {
+        p {
+            font-size: 14px;
+        }
+        .push-message__closeBtn {
+            width: 22px;
+            background-size: 70%;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    :root {
+        --container-padding-inline: 40px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+    .header__logo {
+        width: 93px;
+    }
+    .header__contact-us {
+        display: none;
+    }
+    .header__mob-menu-btn {
+        display: inline-block;
+    }
 }
 @media screen and (max-width: 480px) {
     :root {
         --container-padding-inline: 16px;
+    }
+    .push-message {
+        p {
+            font-size: 12px;
+        }
     }
 }

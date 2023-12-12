@@ -58,26 +58,35 @@ a.inline-link {
     }
 }
 
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
 .container {
     margin: 0 auto;
     max-width: var(--container-max-width);
     padding-inline: var(--container-padding-inline);
+    box-sizing: content-box;
 }
 
 .push-message {
     text-align: center;
     background-image: url('@img/backgrouds/BACKGROUND-push-message.svg');
+    background-size: cover;
+    background-position: center;
 
     p {
         margin: 0;
         padding-block: 1rem;
-
     }
 
     .container {
         transition: 0.3s;
         display: grid;
         grid-template-rows: 0fr;
+        // padding-inline-end: 28px;
     }
     &[open="true"] .container {
         grid-template-rows: 1fr;
@@ -85,12 +94,13 @@ a.inline-link {
     .push-message__content {
         position: relative;
         overflow: hidden;
+        padding-inline-end: 28px;
     }
 
     .push-message__closeBtn {
         position: absolute;
         margin-left: auto;
-        right: 2rem;
+        right: 0;
         top: calc(31.5px - 14px);
         border-radius: 50%;
         border: none;
@@ -101,6 +111,7 @@ a.inline-link {
         background-color: #FFFFFF1A;
         background-image: url('@img/icons/ligth-cross.svg');
         background-position: center;
+        background-repeat: no-repeat;
         transition: 0.3s;
         &:hover {
             background-color: #ffffff34;
@@ -147,6 +158,16 @@ a.inline-link {
     &:hover {
         background-color: var(--color-grey15);
     } 
+}
+
+.header__mob-menu-btn {
+    display: none;
+    width: 28px;
+    aspect-ratio: 1;
+    background-image: url('@img/icons/burger-menu-Icon.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 @import './media.scss';
