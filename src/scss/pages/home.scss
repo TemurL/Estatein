@@ -1,0 +1,39 @@
+.hero {
+    background-image: url('../img/hero-img.png');
+    background-position-y: top;
+    background-position-x: 50vw;
+    background-repeat: no-repeat;
+    background-size: clamp(1000px, 50vw, 100vw);
+}
+
+
+.hero__content {
+    display: flex;
+    gap: 160px;
+    & > * {
+        flex: 1;
+    }
+}
+
+.hero__text-content {
+    padding-block: 144px;
+}
+
+.hero__title {
+    font-size: 3.33em;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 1.3rem;
+}
+
+.hero__buttons {
+    margin-block: 60px;
+    & > *:first-child {
+        margin-inline-end: 20px;
+    }
+}
+
+.properties {
+    height: 3rem;
+    background-color: var(--color-grey50);
+}

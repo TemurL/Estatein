@@ -24,9 +24,11 @@
     --color-grey60: #999999;
     --color-yellow: #FFE500;
 
+    --border-light: 1px solid var(--color-grey15);
+
     // CONTAINER
     --container-max-width: 1596px;
-    --container-padding-inline: 162px;
+    --container-padding-inline: 80px;
 }
 
 html {
@@ -69,6 +71,44 @@ button {
     max-width: var(--container-max-width);
     padding-inline: var(--container-padding-inline);
     box-sizing: content-box;
+}
+
+.title {
+    font-size: 2.5em;
+    font-weight: 500;
+    line-height: 150%;
+    margin: 0;
+}
+
+.parag {
+    line-height: 150%;
+    font-weight: 500;
+    color: var(--color-grey60);
+}
+
+a.button {
+    display: inline-block;
+}
+
+.button {
+    padding: 18px 24px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    &.button_filled {
+        background-color: var(--color-purple60);
+        &:hover, &:active {
+            background-color: var(--color-purple65);
+        }
+    }
+    &.button_transparent {
+        border-color: var(--color-grey15);
+        background-color: var(--color-grey08);
+        &:hover, &:active {
+            background-color: var(--color-grey15);
+        }
+    }
 }
 
 .push-message {
@@ -120,17 +160,49 @@ button {
 
 }
 
+.small-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    > * {
+        flex: 1;
+    }
+}
+
+.small-cards__card {
+    background-color: var(--color-grey10);
+    padding: 16px 24px;
+    border-radius: 12px;
+    border: var(--border-light);
+    > p {
+        margin: 0;
+        line-height: 150%;
+        text-wrap: nowrap;
+    }
+    > *:first-child {
+        font-size: 40px;
+        font-weight: 700;
+        margin: 0;
+    }
+}
+
 .header {
     background-color: var(--color-grey10);
     padding-block: 20px;
     position: sticky;
     top: 0;
+    border-block: var(--border-light);
 }
 
 .header__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.header__logo {
+    vertical-align: middle;
 }
 
 .nav {
@@ -170,4 +242,5 @@ button {
     background-repeat: no-repeat;
 }
 
+@import './pages/home.scss';
 @import './media.scss';
