@@ -4,7 +4,7 @@
     background-position-y: top;
     background-position-x: 50vw;
     background-repeat: no-repeat;
-    background-size: clamp(1000px, 50vw, 100vw);
+    background-size: clamp(1000px, 50vw, 100vw) 100%;
 }
 
 
@@ -32,11 +32,6 @@
     & > *:first-child {
         margin-inline-end: 20px;
     }
-}
-
-.properties {
-    height: 3rem;
-    background-color: var(--color-grey50);
 }
 
 .ring-text {
@@ -104,4 +99,47 @@
 .sr-only {
     display: none;
     // visibility: hidden;
+}
+
+.clues {
+    padding-block: 10px;
+    background-color: var(--color-grey10);
+}
+
+.clues__cards {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    > * {
+        flex: 1;
+        flex-basis: 200px;
+    }
+    padding: 16px;
+    background-color: var(--color-grey08);
+    border-block: 1px solid var(--color-grey15);
+}
+
+.clues__card {
+    position: relative;
+    display: block;
+    background-color: var(--color-grey10);
+    border-radius: 12px;
+    border: 1px solid var(--color-grey15);
+    text-align: center;
+    padding: 40px 20px;
+    transition: background-color 0.3s;
+    .clues__card-text { 
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        background-color: var(--color-grey15);
+    }
+
+    .clues__card-arrow {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
 }

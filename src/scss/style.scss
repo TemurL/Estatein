@@ -36,6 +36,8 @@ html {
     font-size: 18px;
     color: white;
     background-color: var(--color-grey08);
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
 }
 
 *,
