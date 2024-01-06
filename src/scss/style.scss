@@ -98,6 +98,7 @@ a.button {
     border-radius: 10px;
     font-weight: 500;
     transition: background-color 0.3s;
+    text-wrap: nowrap;
     &.button_filled {
         background-color: var(--color-purple60);
         &:hover, &:active {
@@ -243,6 +244,34 @@ a.button {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.reg-section {
+    --block-space: 80px;
+    margin-block: calc(var(--block-space) / 2);
+    padding-block: calc(var(--block-space) / 2);
+
+    .reg-section__title {
+        padding-top: 30px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 30px;
+            top: 0;
+            left: -16px;
+            background-image: url('../img/icons/reg-section__title.svg');
+            background-repeat: no-repeat;
+        }
+    }
+
+    .reg-section__row { 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
 }
 
 @import './pages/home.scss';
