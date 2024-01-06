@@ -19,7 +19,7 @@
     }
 
     .hero__content {
-        gap: 120px;
+        gap: 133px;
     }
     .small-cards {
         gap: 16px;
@@ -28,6 +28,13 @@
         > *:first-child {
             font-size: 30px;
         }
+    }
+    .ring-text {
+        font-size: 11px;
+        --total-width: 130px;
+    }
+    .ring-text__arrow {
+        --arrow-width: 58px;
     }
 }
 @media screen and (max-width: 1024px) {

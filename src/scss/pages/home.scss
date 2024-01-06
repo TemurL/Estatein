@@ -34,30 +34,28 @@
     }
 }
 
-.propreties {
+.properties {
     height: 3rem;
     background-color: var(--color-grey50);
 }
 
 .ring-text {
-    // margin: 0 auto;
     position: absolute;
     top: 18%;
-    --char-count: 31;
+    --total-width: 175px;
     --inner-angle: calc(360 / var(--char-count, 30) * 1deg);
-    --char-width: 1.5;
+    --char-width: 1.43;
     --radius: calc((var(--char-width, 1) / sin(var(--inner-angle))) * -1ch);
+    font-size: 15px;
     background-color: var(--color-grey08);
-    width: 175px;
+    width: var(--total-width);
     aspect-ratio: 1;
     border-radius: 50%;
     border: 2px solid var(--color-grey15);
-    // left: calc(50% + var(--radius));
-    left: calc(50% - 87.5px);
+    left: calc(50% - (var(--total-width) / 2));
 }
 
 .ring-text__text-needs {
-    font-size: 15px;
     position: relative;
     height: 100%;
     animation-name: spin;
@@ -101,4 +99,9 @@
         translate(-50%, -50%)
         rotate(calc(var(--inner-angle) * var(--index)))
         translateY(var(--radius));
+}
+
+.sr-only {
+    display: none;
+    // visibility: hidden;
 }
