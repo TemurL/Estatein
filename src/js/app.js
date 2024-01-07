@@ -9,4 +9,4 @@ TLFunc.isWebp()
 pushMessage();
 setActiveNavLi();
 ringTextRender();
-uniSlider(3);
+uniSlider();
