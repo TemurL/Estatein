@@ -46,7 +46,8 @@
     width: var(--total-width);
     aspect-ratio: 1;
     border-radius: 50%;
-    border: 2px solid var(--color-grey15);
+    border: var(--border-light);
+    border-width: 2px;
     left: calc(50% - (var(--total-width) / 2));
 }
 
@@ -71,7 +72,8 @@
     top: calc(50% - (var(--arrow-width) / 2));
     left: calc(50% - (var(--arrow-width) / 2));
     border-radius: 50%;
-    border: 2px solid var(--color-grey15);
+    border: var(--border-light);
+    border-width: 2px;
     animation-name: spin;
     animation-duration: 8s;
     animation-direction: reverse;
@@ -117,7 +119,7 @@
     }
     padding: 16px;
     background-color: var(--color-grey08);
-    border-block: 1px solid var(--color-grey15);
+    border-block: var(--border-light);
 }
 
 .clues__card {
@@ -125,7 +127,7 @@
     display: block;
     background-color: var(--color-grey10);
     border-radius: 12px;
-    border: 1px solid var(--color-grey15);
+    border: var(--border-light);
     text-align: center;
     padding: 40px 20px;
     transition: background-color 0.3s;
@@ -143,3 +145,63 @@
         right: 20px;
     }
 }
+
+// ===========================
+
+.slider {
+    margin-block: 80px;
+}
+
+.slider__cards {
+    --fade-time: 500ms;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    gap: 20px;
+    transition: var(--fade-time);
+}
+
+.slider__card {
+    transition: 0.3s;
+    min-width: calc(33% - 10px);
+}
+
+.properties__card {
+    height: 700px;
+    position: relative;
+    border: var(--border-light);
+    border-radius: 12px;
+    padding: 20px;
+    .properties__card-img {
+        height: 45%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 10px;
+    }
+}
+
+.slider__nav {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 20px;
+    margin-top: 50px;
+    border-top: var(--border-light);
+
+    .slider__nav-btn {
+        width: 58px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: var(--border-light);
+        transition: background-color 0.3s;
+        &:last-child {
+            margin-inline-start: 10px;
+        }
+        &:hover {
+            background-color: var(--color-grey15);
+        }
+    }
+}
+
+// ===============================
+

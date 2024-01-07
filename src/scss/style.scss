@@ -48,6 +48,7 @@ html {
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 a {
@@ -66,6 +67,12 @@ button {
     border: none;
     outline: none;
     background-color: transparent;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--color-grey15);
 }
 
 .container {
@@ -160,7 +167,6 @@ a.button {
             background-color: #ffffff34;
         }
     }
-
 }
 
 .small-cards {
@@ -220,7 +226,7 @@ a.button {
     border: 1px solid transparent;
     &.nav__li_active {
         background-color: var(--color-grey08);
-        border: 1px solid var(--color-grey15);
+        border: var(--border-light);
         border-radius: 10px;
     }
 }
@@ -228,7 +234,7 @@ a.button {
 .header__contact-us {
     @extend .nav__li;
     background-color: var(--color-grey08);
-    border: 1px solid var(--color-grey15);
+    border: var(--border-light);
     border-radius: 10px;
     transition: background-color 0.3s;
     &:hover {
