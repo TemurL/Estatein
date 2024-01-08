@@ -69,7 +69,7 @@ export const uniSlider = () => {
 
 
     for (let i = 0; i < slider.length; i++) {
-        let totalPages = document.querySelector('.slider__total-pages-number');
+        let totalPages = slider[i].querySelector('.slider__total-pages-number');
 
         totalPages.textContent = `${
             slider[i].children[0].children.length - slider[i].querySelectorAll('.show').length + 1
