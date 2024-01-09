@@ -1,16 +1,16 @@
-export const uniSlider = () => {
+export const uniSlider = (n) => {
     const slider = document.getElementsByClassName('slider');
     if (slider.length == 0) return
 
 
-    const increaseNumber = () => {
-        let pageNumber = document.querySelector('.slider__current-page-number');
+    const increaseNumber = (e) => {
+        let pageNumber = e.target.parentElement.parentElement.querySelector('.slider__current-page-number');
         let digit = pageNumber.textContent;
         digit++;
         pageNumber.textContent = digit;
     }
-    const decreaseNumber = () => {
-        let pageNumber = document.querySelector('.slider__current-page-number');
+    const decreaseNumber = (e) => {
+        let pageNumber = e.target.parentElement.parentElement.querySelector('.slider__current-page-number');
         let digit = pageNumber.textContent;
         digit--;
         pageNumber.textContent = digit;
@@ -29,7 +29,7 @@ export const uniSlider = () => {
             if (Array.from(activeCards).indexOf(activeCard) == 0) {
                 allCards[index - 1].classList.add('show');
             }
-            if (Array.from(activeCards).indexOf(activeCard) == 2) {
+            if (Array.from(activeCards).indexOf(activeCard) == activeCards.length - 1) {
                 allCards[index].classList.remove('show');
                 allCards[index].setAttribute('position', 'after');
             }
@@ -38,7 +38,7 @@ export const uniSlider = () => {
         if (allCards[0] == sliderCards.querySelector('.show_1')) {
             e.target.setAttribute('disabled', 'disabled');
         }
-        decreaseNumber();
+        decreaseNumber(e);
 
     }
     const nextBtnAct = (e) => {
@@ -51,7 +51,7 @@ export const uniSlider = () => {
             let index = Array.from(allCards).indexOf(activeCard);
             let showClass = activeCard.classList[3];
             activeCard.classList.remove(showClass);
-            if (Array.from(activeCards).indexOf(activeCard) == 2) {
+            if (Array.from(activeCards).indexOf(activeCard) == activeCards.length - 1) {
                 allCards[index + 1].classList.add('show');
             }
             if (Array.from(activeCards).indexOf(activeCard) == 0) {
@@ -60,17 +60,17 @@ export const uniSlider = () => {
             }
             allCards[index + 1].classList.add(showClass);
         })
-        if (allCards.at(-1) == sliderCards.querySelector('.show_3')) {
+        if (allCards.at(-1) == sliderCards.querySelectorAll('.show')[activeCards.length - 1]) {
             e.target.setAttribute('disabled', 'disabled');
         }
-        increaseNumber();
+        increaseNumber(e);
     }
 
 
 
     for (let i = 0; i < slider.length; i++) {
         let totalPages = slider[i].querySelector('.slider__total-pages-number');
-
+        
         totalPages.textContent = `${
             slider[i].children[0].children.length - slider[i].querySelectorAll('.show').length + 1
         }`
