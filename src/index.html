@@ -4,9 +4,9 @@
         title: 'Home'
     })
     <body>
+        @@include('./html/pushMessage.html')
+        @@include('./html/header.html')
         <main>
-            @@include('./html/pushMessage.html')
-            @@include('./html/header.html')
             <section class="hero">
                 <div class="container">
                     <div class="hero__content">
@@ -591,6 +591,7 @@
                 </div>
             </section>
         </main>
+        @@include('./html/footer.html')
         <script src="js/app.min.js"></script>
     </body>
 </html>
