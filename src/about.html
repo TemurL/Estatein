@@ -4,10 +4,36 @@
         title: 'About Us'
     })
     <body>
+        @@include('./html/pushMessage.html')
+        @@include('./html/header.html')
         <main>
-            @@include('./html/pushMessage.html')
-            @@include('./html/header.html')
+            <section class="reg-section journey">
+                <div class="container">
+                    <div class="journey__content">
+                        <div class="journey__text-content">
+                            <h2 class="title reg-section__title journey__title">Our Journey</h2>
+                            <p class="parag journey__parag">Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary. Over the years, we've expanded our reach, forged valuable partnerships, and gained the trust of countless clients.</p>
+                            <div class="small-cards journey__small-cards">
+                                <div class="small-cards__card">
+                                    <p class="small-cards__number">200+</p>
+                                    <p class="parag">Happy Customers</p>
+                                </div>
+                                <div class="small-cards__card">
+                                    <p class="small-cards__number">10k+</p>
+                                    <p class="parag">Properties For Clients</p>
+                                </div>
+                                <div class="small-cards__card">
+                                    <p class="small-cards__number">16+</p>
+                                    <p class="parag">Years of Experience</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="journey__img"><img class="journey__png" src="../img/backgrouds/bg-about-hero.png" alt=""></div>
+                    </div>
+                </div>
+            </section>
         </main>
+        @@include('./html/footer.html')
         <script src="js/app.min.js"></script>
     </body>
 </html>

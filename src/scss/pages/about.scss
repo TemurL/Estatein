@@ -1,0 +1,31 @@
+.journey__content {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 80px;
+
+    > * {
+        flex: 1;
+    }
+}
+
+.journey__text-content {
+    padding-top: 2rem;
+}
+
+.journey__img {
+    border: var(--border-light);
+    border-radius: 12px;
+    background-image: url('../img/backgrouds/bg-about-hero.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    display: flex;
+    align-items: flex-end;
+
+    .journey__png {
+        width: 100%;
+        min-width: 300px;
+    }
+}
