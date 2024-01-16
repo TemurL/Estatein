@@ -42,8 +42,6 @@
 
 .values__cards-wrapper {
     flex-basis: 60%;
-    border: 10px solid #191919; 
-    border-radius: 21px;
 }
 
 .values__cards {
@@ -73,4 +71,71 @@
     background-color: var(--color-grey15);
     top: 50%;
     left: 5%;
+}
+
+.achievements__cards {
+    display: flex;
+    gap: 40px;
+    margin-top: 80px;
+    > * {
+        flex: 1;
+    }
+}
+
+.achievements__card {
+    border-radius: 12px;
+    padding: 40px;
+    border: var(--border-light);
+    .achievements__card-title {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 150%;
+        margin-top: 0;
+    }
+}
+
+.steps__cards {
+    @extend .reg-section;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 30px;
+}
+
+
+.steps__card {
+
+    .steps__card-head {
+        padding: 16px 20px;
+        margin-block: 0;
+        border-left: 1px solid var(--color-purple60);
+    }
+
+    .steps__card-body {
+        position: relative;
+        background-clip: padding-box;
+        background-color: var(--color-grey08);
+        $border: 1px;
+        padding: 50px;
+        left: 1px;
+        bottom: 1px;
+        border-radius: 12px;
+        border-top-left-radius: 0px;
+        background-image: linear-gradient(121deg, var(--color-purple60) -49.01%, rgba(112, 59, 247, 0.00) 13.65%);
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            inset: 0px;
+            // left: 1px;
+            margin: -$border;
+            border-radius: inherit;
+            background-image: linear-gradient(to bottom right, var(--color-purple60) 0% 5%, var(--color-grey15) 25% 100%);
+        }
+    }
+    .steps__card-title {
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 150%;
+        margin-top: 0;
+    }
 }
