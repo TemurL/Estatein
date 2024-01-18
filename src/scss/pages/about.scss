@@ -139,3 +139,74 @@
         margin-top: 0;
     }
 }
+
+.team__cards {
+    @extend .reg-section;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.team__card {
+    border: var(--border-light);
+    padding: 30px;
+    border-radius: 12px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    flex-basis: 370px;
+    justify-content: space-between;
+    position: relative;
+    .team__card-img {
+        margin-bottom: 50px;
+    }
+    .team__card-name {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 115%;
+    }
+    .team__card-pos {
+        margin-top: 0px;
+    }
+    .team__card-hello {
+        background-color: var(--color-grey10);
+        border: var(--border-light);
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px;
+        // padding-inline-end: 12px;
+        padding-inline-start: 24px;
+        p {
+            margin: 0;
+        }
+        .team__card-hello-btn {
+            display: inline-block;
+            aspect-ratio: 1;
+            width: 44px;
+            border-radius: 50%;
+            background-color: var(--color-purple60);
+            background-blend-mode: normal;
+            background-image: url('../img/icons/white-plane.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    .team__card-twtr-btn {
+        position: absolute;
+        $width: 76px;
+        width: $width;
+        height: 52px;
+        top: 50%;
+        left: calc(50% - ($width / 2));
+        background-color: var(--color-purple60);
+        border-radius: 50px;
+        background-blend-mode: normal;
+        background-image: url('../img/icons/TWTR-icon.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
