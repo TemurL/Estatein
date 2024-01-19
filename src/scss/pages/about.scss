@@ -155,7 +155,7 @@
     display: flex;
     text-align: center;
     flex-direction: column;
-    flex-basis: 370px;
+    flex-basis: 250px;
     justify-content: space-between;
     position: relative;
     .team__card-img {
@@ -193,6 +193,11 @@
             background-image: url('../img/icons/white-plane.svg');
             background-repeat: no-repeat;
             background-position: center;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        &:hover .team__card-hello-btn {
+            background-color: var(--color-purple75);
         }
     }
     .team__card-twtr-btn {
@@ -208,5 +213,10 @@
         background-image: url('../img/icons/TWTR-icon.svg');
         background-repeat: no-repeat;
         background-position: center;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        &:hover {
+            background-color: var(--color-purple75);
+        }
     }
 }
