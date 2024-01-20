@@ -169,7 +169,6 @@
     z-index: -10;
     scale: 0;
     background-color: var(--color-grey08);
-    height: 95%;
     overflow-y: scroll;
     &[position="after"] {
         left: calc(85%);

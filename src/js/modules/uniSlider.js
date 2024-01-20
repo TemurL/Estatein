@@ -66,6 +66,23 @@ export const uniSlider = (n) => {
         increaseNumber(e);
     }
 
+    const resizeObserverForSliders = new ResizeObserver((entries, observer) => {
+        entries.forEach(entry => {
+            let slide = entry.target;
+            // let slideHeight = slide.clientHeight;
+            let slider = slide.parentElement;
+            let maxHeight = 0
+            let allSlides = Array.from(slider.children).forEach(slide => {
+                if (slide.clientHeight > maxHeight) {
+                    maxHeight = slide.clientHeight;
+                };
+            });
+            slider.style.height = `calc(${maxHeight}px + 2.5rem)`;
+            console.log('done');
+        })
+    })
+
+
 
 
     for (let i = 0; i < slider.length; i++) {
@@ -73,7 +90,10 @@ export const uniSlider = (n) => {
         
         totalPages.textContent = `${
             slider[i].children[0].children.length - slider[i].querySelectorAll('.show').length + 1
-        }`
+        }`;
+
+        resizeObserverForSliders.observe(slider[i].querySelector('.slider__card'));
+
         slider[i].querySelector('.slider__prev-btn').addEventListener('click', prevBtnAct);
         slider[i].querySelector('.slider__next-btn').addEventListener('click', nextBtnAct);
     }
