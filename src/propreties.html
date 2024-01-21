@@ -6,6 +6,69 @@
     <body>
         @@include('./html/header.html')
         <main>
+            <section class="reg-section properties-hero">
+                <div class="container">
+                    <div class="properties-hero__content">
+                        <h2 class="title properties-hero__title">Find Your Dream Property</h2>
+                        <p class="parag properties-hero__parag">Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and a chance to redefine your life. With categories to suit every dreamer, your journey </p>
+                    </div>
+                </div>
+            </section>
+            <section class="properties-search">
+                <div class="container">
+                    <form id="properties-search__form" class="search-form properties-search__form" action="" method="get">
+                        <div class="wrapper-for-border">
+                            <div class="search-form__text-input-block">
+                                <input class="search-form__text-input" type="text" placeholder="Search For A Property" name="text" autocomplete="off">
+                                <button type="submit" class="search-form__button button button_filled"><img src="@img/icons/Icon-white-eyeglass.svg" alt="">Find Property</button>
+                            </div>
+                        </div>
+                        <div class="search-form__select-input-block">
+                            <select name="location" id="location" form="properties-search__form">
+                                <option value="" selected style="display: none;">Location</option>
+                                <option value="europe">Europe</option>
+                                <option value="asia">Asia</option>
+                                <option value="africa">Africa</option>
+                                <option value="australia">Australia</option>
+                            </select>
+                            <select name="type" id="type" form="properties-search__form">
+                                <option value="" selected style="display: none;">Property type</option>
+                                <option value="villa">Villa</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="house">House</option>
+                                <option value="europe">Europe</option>
+                            </select>
+                            <div name="range" id="range">
+                                Pricing Range
+                                <div class="search-form__range-block">
+                                    <label for="pricing">Show prices up to:</label>
+                                    <p class="parag" id="show-pricing-range">Select amount</p>
+                                    <input type="range" min="60000" max="4000000" step="10000" name="pricing" id="pricing" class="search-form__range" value="4000000">
+                                </div>
+                            </div>
+                            <select name="size" id="size" form="properties-search__form">
+                                <option value="" selected style="display: none;">Property Size</option>
+                                <option value="100">100 m<sup>2</sup></option>
+                                <option value="120">120 m<sup>2</sup></option>
+                                <option value="150">150 m<sup>2</sup></option>
+                                <option value="200">200 m<sup>2</sup></option>
+                            </select>
+                            <select name="year" id="year" form="properties-search__form">
+                                <option value="" selected style="display: none;">Build Year</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </section>
         </main>
         @@include('./html/footer.html')
         <script src="js/app.min.js"></script>

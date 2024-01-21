@@ -80,6 +80,11 @@ ul {
     padding: 0;
 }
 
+input {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 18px;
+}
+
 .container {
     margin: 0 auto;
     max-width: var(--container-max-width);
@@ -413,4 +418,5 @@ a.button {
 
 @import './pages/home.scss';
 @import './pages/about.scss';
+@import './pages/properties.scss';
 @import './media.scss';
