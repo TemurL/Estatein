@@ -92,7 +92,9 @@ export const uniSlider = (n) => {
             slider[i].children[0].children.length - slider[i].querySelectorAll('.show').length + 1
         }`;
 
-        resizeObserverForSliders.observe(slider[i].querySelector('.slider__card'));
+        Array.from(slider[i].children[0].children).forEach(slide => resizeObserverForSliders.observe(slide))
+
+        // resizeObserverForSliders.observe(slider[i].querySelector('.slider__card'));
 
         slider[i].querySelector('.slider__prev-btn').addEventListener('click', prevBtnAct);
         slider[i].querySelector('.slider__next-btn').addEventListener('click', nextBtnAct);

@@ -80,9 +80,21 @@ ul {
     padding: 0;
 }
 
-input {
+.input {
     font-family: 'Urbanist', sans-serif;
     font-size: 18px;
+    accent-color: var(--color-purple60);
+    font-size: 18px;
+    border: var(--border-light);
+    border-radius: 12px;
+    background-color: var(--color-grey08);
+    color: var(--color-grey60);
+    line-height: 150%;
+    font-weight: 500;
+    height: 72px;
+    padding: 20px;
+    text-wrap: nowrap;
+    outline: none;
 }
 
 .container {

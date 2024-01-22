@@ -27,6 +27,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
         gap: 15px;
         background-color: var(--color-grey08);
 
@@ -38,13 +39,14 @@
             border: none;
             outline: none;
             color: white;
-            flex-basis: 100%;
+            flex-grow: 5;
         }
         .search-form__button {
             display: inline-block;
             color: white;
             font-size: inherit;
             line-height: 150%;
+            flex-grow: 1;
             img {
                 vertical-align: top;
                 margin-inline-end: 8px;
@@ -57,6 +59,7 @@
         width: 100%;
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 20px;
         padding: 10px;
         background-color: var(--color-grey10);
@@ -73,7 +76,8 @@
             font-weight: 500;
             height: 72px;
             padding: 20px;
-            padding-inline-start: 50px;
+            padding-inline: 50px;
+            text-wrap: nowrap;
             outline: none;
             appearance: none;
             background-repeat: no-repeat;
@@ -115,11 +119,60 @@
             border-bottom-right-radius: 12px;
             opacity: 0;
             transition: 0.3s;
+            > input[type='range'] {
+                width: 100%;
+            }
             &.show {
                 visibility: visible;
                 opacity: 1;
                 top: 90%;
             }
         }
+    }
+}
+
+
+.contact-form__form {
+    padding: 30px;
+    border-radius: 12px;
+    border: var(--border-light);
+}
+
+.form__row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+.form__item {
+    flex: 1;
+    flex-basis: 260px;
+    label[for] {
+        display: block;
+        margin-bottom: 14px;
+    }
+    .input {
+        background-color: var(--color-grey10);
+        width: 100%;
+    }
+    select {
+        @extend .input;
+        appearance: none;
+        background-image: url(../img/icons/Icon-grey-select-arrow.svg);
+        background-repeat: no-repeat;
+        background-position: calc(100% - 24px) center;
+    }
+    textarea {
+        @extend .input;
+        resize: none;
+        height: 170px;
+        text-wrap: wrap;
     }
 }
