@@ -38,7 +38,7 @@
                                 <option value="house">House</option>
                             </select>
                             <div name="range" id="range">
-                                Pricing Range
+                                <p style="margin: 0;">Pricing Range</p>
                                 <div class="search-form__range-block">
                                     <label for="pricing">Show prices up to:</label>
                                     <p class="parag" id="show-pricing-range">Select amount</p>
@@ -452,8 +452,8 @@
                         </div>
                         <div class="form__row">
                             <div class="form__item">
-                                <label for="contact-form1__location">Preferred Location</label>
-                                <select name="contact-form1__location" id="contact-form1__location">
+                                <label for="contact-form-1__location">Preferred Location</label>
+                                <select name="contact-form-1__location" id="contact-form-1__location">
                                     <option value="" selected style="display: none;">Select Location</option>
                                     <option value="europe">Europe</option>
                                     <option value="asia">Asia</option>
@@ -462,8 +462,8 @@
                                 </select>
                             </div>
                             <div class="form__item">
-                                <label for="contact-form1__type">Property Type</label>
-                                <select name="contact-form1__type" id="contact-form1__type">
+                                <label for="contact-form-1__type">Property Type</label>
+                                <select name="contact-form-1__type" id="contact-form-1__type">
                                     <option value="" selected style="display: none;">Select Property Type</option>
                                     <option value="villa">Villa</option>
                                     <option value="apartment">Apartment</option>
@@ -471,8 +471,8 @@
                                 </select>
                             </div>
                             <div class="form__item">
-                                <label for="contact-form1__bathrooms">No. of Bathrooms</label>
-                                <select name="contact-form1__bathrooms" id="contact-form1__bathrooms">
+                                <label for="contact-form-1__bathrooms">No. of Bathrooms</label>
+                                <select name="contact-form-1__bathrooms" id="contact-form-1__bathrooms">
                                     <option value="" selected style="display: none;">Select no. of Bedrooms</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -481,8 +481,8 @@
                                 </select>
                             </div>
                             <div class="form__item">
-                                <label for="contact-form1__bedrooms">No. of Bedrooms</label>
-                                <select name="contact-form1__bedrooms" id="contact-form1__bedrooms">
+                                <label for="contact-form-1__bedrooms">No. of Bedrooms</label>
+                                <select name="contact-form-1__bedrooms" id="contact-form-1__bedrooms">
                                     <option value="" selected style="display: none;">Select no. of Bedrooms</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -496,9 +496,39 @@
                         </div>
                         <div class="form__row">
                             <div class="form__item">
-                                <label for="contact-form1__message">Message</label>
-                                <textarea name="contact-form1__message" id="contact-form1__message" cols="30" rows="10" placeholder="Enter your Message here.." maxlength="250"></textarea>
+                                <label for="">Budget</label>
+                                <div class="contact-form-1__budget-block">
+                                    <p class="label" style="margin: 0;">Select Your Budget</p>
+                                    <div class="contact-form-1__budget">
+                                        <label for="contact-form-1__budget_from">From :</label>
+                                        <input type="number" name="contact-form-1__budget_from" id="contact-form-1__budget_from" min="50000" max="1000000" step="10000" placeholder="50000">
+                                        <label for="contact-form-1__budget_to">To :</label>
+                                        <input type="number" name="contact-form-1__budget_to" id="contact-form-1__budget_to" min="1000000" max="5000000" step="10000" placeholder="1000000">
+                                    </div>
+                                </div>
                             </div>
+                            <div class="form__item">
+                                <label for="">Preferred Contact Method</label>
+                                <fieldset class="contact-form-1__method">
+                                    <label for="contact-form-1__method_number">Send to Number <span class="method-radio select"></span></label>
+                                    <input type="radio" id="contact-form-1__method_number" name="contact-form-1__method" value="phone" class="contact-form-1__method_number" checked>
+                                    <label for="contact-form-1__method_email">Send to Email <span class="method-radio"></span></label>
+                                    <input type="radio" id="contact-form-1__method_email" name="contact-form-1__method" value="email" class="contact-form-1__method_email">
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="form__row">
+                            <div class="form__item">
+                                <label for="contact-form-1__message">Message</label>
+                                <textarea name="contact-form-1__message" id="contact-form-1__message" cols="30" rows="10" placeholder="Enter your Message here.." maxlength="250"></textarea>
+                            </div>
+                        </div>
+                        <div class="form__footer">
+                            <div class="form__argee-block">
+                                <input type="checkbox" name="agree" class="form__argee" id="form__argee">
+                                <label for="form__argee">I agree with <a href="" class="inline-link">Terms of Use</a> and <a href="" class="inline-link">Privacy Policy</a></label>
+                            </div>
+                            <button class="form__submit button button_filled">Send Your Message</button>
                         </div>
                     </form>
                 </div>

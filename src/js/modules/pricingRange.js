@@ -9,6 +9,9 @@ export const pricingRange = () => {
     })
     selectElement.addEventListener('mouseleave', (e) => {
         rangeBlock.classList.remove('show');
+        selectElement.children[0].textContent = `
+            Up To: $${rangeBlock.children[2].value}
+        `
     })
 
     const rengeInput = document.getElementById('pricing');

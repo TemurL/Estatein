@@ -95,6 +95,9 @@ ul {
     padding: 20px;
     text-wrap: nowrap;
     outline: none;
+    &:focus {
+        outline: #703BF7;
+    }
 }
 
 .container {
@@ -128,6 +131,9 @@ a.button {
     font-weight: 500;
     transition: background-color 0.3s;
     text-wrap: nowrap;
+    color: white;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1rem;
     &.button_filled {
         background-color: var(--color-purple60);
         &:hover, &:active {
