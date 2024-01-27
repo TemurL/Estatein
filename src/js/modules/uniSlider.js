@@ -73,7 +73,6 @@ export const uniSlider = (n) => {
                 };
             });
             slider.style.height = `calc(${maxHeight}px + 2.5rem)`;
-            console.log('done');
         })
     })
     for (let i = 0; i < slider.length; i++) {

@@ -2,7 +2,6 @@ export const methodRadio = () => {
     const labels = document.querySelectorAll('label[for="contact-form-1__method_number"], label[for="contact-form-1__method_email"]');
 
     if (!labels) return
-    console.log(labels);
 
     labels.forEach(label => {
         label.addEventListener('click', (e) => {
