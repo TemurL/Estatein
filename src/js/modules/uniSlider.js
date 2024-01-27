@@ -1,8 +1,6 @@
 export const uniSlider = (n) => {
     const slider = document.getElementsByClassName('slider');
     if (slider.length == 0) return
-
-
     const increaseNumber = (e) => {
         let pageNumber = e.target.parentElement.parentElement.querySelector('.slider__current-page-number');
         let digit = pageNumber.textContent;
@@ -15,7 +13,6 @@ export const uniSlider = (n) => {
         digit--;
         pageNumber.textContent = digit;
     }
-
     const prevBtnAct = (e) => {
         let nextBtn = e.target.parentElement.children[1];
         nextBtn.removeAttribute('disabled');
@@ -65,14 +62,12 @@ export const uniSlider = (n) => {
         }
         increaseNumber(e);
     }
-
     const resizeObserverForSliders = new ResizeObserver((entries, observer) => {
         entries.forEach(entry => {
             let slide = entry.target;
-            // let slideHeight = slide.clientHeight;
             let slider = slide.parentElement;
             let maxHeight = 0
-            let allSlides = Array.from(slider.children).forEach(slide => {
+            Array.from(slider.children).forEach(slide => {
                 if (slide.clientHeight > maxHeight) {
                     maxHeight = slide.clientHeight;
                 };
@@ -81,22 +76,35 @@ export const uniSlider = (n) => {
             console.log('done');
         })
     })
-
-
-
-
     for (let i = 0; i < slider.length; i++) {
-        let totalPages = slider[i].querySelector('.slider__total-pages-number');
-        
+        let totalPages = slider[i].querySelector('.slider__total-pages-number');        
         totalPages.textContent = `${
             slider[i].children[0].children.length - slider[i].querySelectorAll('.show').length + 1
         }`;
 
         Array.from(slider[i].children[0].children).forEach(slide => resizeObserverForSliders.observe(slide))
 
-        // resizeObserverForSliders.observe(slider[i].querySelector('.slider__card'));
-
         slider[i].querySelector('.slider__prev-btn').addEventListener('click', prevBtnAct);
         slider[i].querySelector('.slider__next-btn').addEventListener('click', nextBtnAct);
+    
+        slider[i].addEventListener('touchstart', handleTouchStart, false);
+        slider[i].addEventListener('touchmove', handleTouchMove, false);
+
+        let xStart = null;
+
+        function handleTouchStart(e) {
+            if (e.touches[0].clientX) xStart = e.touches[0].clientX;
+        }
+        function handleTouchMove(e) {
+            if (!xStart) return
+            let xMove = e.touches[0].clientX;
+
+            if (xStart > xMove) {
+                slider[i].querySelector('.slider__next-btn').click();
+            } else {
+                slider[i].querySelector('.slider__prev-btn').click();
+            }
+            xStart = null;
+        }
     }
 }
