@@ -34,6 +34,10 @@
     }
 }
 
+.hero__img {
+    position: relative;
+}
+
 .ring-text {
     position: absolute;
     top: 18%;
@@ -48,7 +52,7 @@
     border-radius: 50%;
     border: var(--border-light);
     border-width: 2px;
-    left: calc(50% - (var(--total-width) / 2));
+    left: calc(-1 * var(--total-width));
 }
 
 .ring-text__text-needs {

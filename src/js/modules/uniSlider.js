@@ -72,7 +72,28 @@ export const uniSlider = (n) => {
                     maxHeight = slide.clientHeight;
                 };
             });
+            if (window.outerWidth <= 768) {
+                if (slide.classList.contains('show_2')) {
+                    slide.classList.remove('show_2')
+                    slide.classList.remove('show');
+                    slide.setAttribute('removedclass', 'show_2');
+                }
+                if (slide.classList.contains('show_3')) {
+                    slide.classList.remove('show_3')
+                    slide.classList.remove('show')
+                    slide.setAttribute('removedclass', 'show_3');
+                }
+            } else {
+                if (slide.getAttribute('removedclass')) {
+                    slide.classList.add('show');
+                    slide.classList.add(`${slide.getAttribute('removedclass')}`);
+                }
+            }
             slider.style.height = `calc(${maxHeight}px + 2.5rem)`;
+            let totalPages = slider.parentElement.querySelector('.slider__total-pages-number');        
+            totalPages.textContent = `${
+                slider.children.length - slider.querySelectorAll('.show').length + 1
+            }`;
         })
     })
     for (let i = 0; i < slider.length; i++) {

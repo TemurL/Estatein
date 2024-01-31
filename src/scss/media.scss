@@ -41,6 +41,30 @@
     :root {
         --container-padding-inline: 40px;
     }
+    .hero {
+        background: none;
+        margin-top: 40px;
+    }
+    .hero__content {
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+    .hero__text-content {
+        padding-top: 0;
+    }
+    .hero__img {
+        aspect-ratio: 1;
+        background-image: url('../img/hero-img.png');
+        background-position: center;
+        background-size: cover;
+        border: var(--border-light);
+        border-radius: 12px;
+    }
+    .ring-text {
+        top: clamp(20px, calc(50% - var(--total-width)), 500px);
+        top: calc(90% - var(--total-width) / 2);
+        left: 0;
+    }
 }
 @media screen and (max-width: 768px) {
     .nav {
@@ -55,6 +79,29 @@
     .header__mob-menu-btn {
         display: inline-block;
     }
+    .small-cards__card {
+        text-align: center;
+    }
+
+    a.testimonials__button,
+    a.FAQ__button,
+    a.properties__button {
+        display: none;
+    }
+
+    .slider__card {
+        --card-width: 100%;
+    }
+
+    .slider__card.show_1 {
+        left: 0;
+    }
+    .slider__card.show_2 {
+        left: calc(50% - var(--card-width) / 2);
+    }
+    .slider__card.show_3 {
+        left: calc(100% - var(--card-width));
+    }
 }
 @media screen and (max-width: 480px) {
     :root {
@@ -63,6 +110,35 @@
     .push-message {
         p {
             font-size: 12px;
+        }
+    }
+    .ring-text {
+        --total-width: 100px;
+        font-size: 9px;
+    }
+    .ring-text__arrow {
+        --arrow-width: 50px;
+    }
+    .hero__buttons {
+        .button {
+            text-align: center;
+            margin: 10px 0;
+            display: block;
+        }
+    }
+    .clues__cards {
+        .clues__card {
+            padding: 20px 10px;
+            flex-basis: 150px;
+        }
+        .clues__card-text {
+            font-size: 14px;
+        }
+        .clues__card-arrow {
+            width: 26px;
+        }
+        .clues__card-img {
+            width: 48px;
         }
     }
 }
