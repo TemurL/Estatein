@@ -109,22 +109,44 @@ export const uniSlider = (n) => {
     
         slider[i].addEventListener('touchstart', handleTouchStart, false);
         slider[i].addEventListener('touchmove', handleTouchMove, false);
-
-        let xStart = null;
-
-        function handleTouchStart(e) {
-            if (e.touches[0].clientX) xStart = e.touches[0].clientX;
+        let xDown = null;
+        let yDown = null;
+            
+        function getTouches(evt) {
+            return evt.touches
         }
-        function handleTouchMove(e) {
-            if (!xStart) return
-            let xMove = e.touches[0].clientX;
-
-            if (xStart > xMove) {
-                slider[i].querySelector('.slider__next-btn').click();
+        
+        function handleTouchStart(evt) {
+            const firstTouch = getTouches(evt)[0];
+            xDown = firstTouch.clientX;
+            yDown = firstTouch.clientY;
+        };
+            
+        function handleTouchMove(evt) {
+            if ( ! xDown || ! yDown ) return
+                
+            let xUp = evt.touches[0].clientX;
+            let yUp = evt.touches[0].clientY;
+                
+            let xDiff = xDown - xUp;
+            let yDiff = yDown - yUp;
+                
+            if ( Math.abs(xDiff) > Math.abs(yDiff) ) {/* отлавливаем разницу в движении */
+                if ( xDiff > 0 ) {
+                    slider[i].querySelector('.slider__next-btn').click();
+                } else {
+                    slider[i].querySelector('.slider__prev-btn').click();
+                }
             } else {
-                slider[i].querySelector('.slider__prev-btn').click();
+                if ( yDiff > 0 ) {
+                /* swipe вверх */
+                } else {
+                /* swipe вниз */
+                }
             }
-            xStart = null;
-        }
+            /* свайп был, обнуляем координаты */
+            xDown = null;
+            yDown = null;
+        };
     }
 }
