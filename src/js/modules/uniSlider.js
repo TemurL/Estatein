@@ -107,8 +107,8 @@ export const uniSlider = (n) => {
         slider[i].querySelector('.slider__prev-btn').addEventListener('click', prevBtnAct);
         slider[i].querySelector('.slider__next-btn').addEventListener('click', nextBtnAct);
     
-        slider[i].addEventListener('touchstart', handleTouchStart, false);
-        slider[i].addEventListener('touchmove', handleTouchMove, false);
+        slider[i].children[0].addEventListener('touchstart', handleTouchStart, false);
+        slider[i].children[0].addEventListener('touchmove', handleTouchMove, false);
         let xDown = null;
         let yDown = null;
             

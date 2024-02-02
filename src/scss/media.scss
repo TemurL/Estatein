@@ -91,6 +91,13 @@
 
     .slider__card {
         --card-width: 100%;
+        scale: 1;
+        &[position="after"] {
+            left: calc(85%);
+        }
+        &[position="before"] {
+            left: calc(-15%);
+        }
     }
 
     .slider__card.show_1 {
