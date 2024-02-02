@@ -6,6 +6,7 @@
 
     > * {
         flex: 1;
+        flex-basis: 500px;
     }
 }
 
@@ -26,22 +27,30 @@
 
     .journey__png {
         width: 100%;
-        min-width: 300px;
+        // min-width: 300px;
     }
 }
 
 .values > .container {
     display: flex;
+    flex-wrap: wrap;
     gap: 80px;
     align-items: center;
+    justify-content: space-between;
+
+    // > * {
+    //     flex-basis: 0;
+    // }
 }
 
 .values__text-content {
-    flex-basis: 40%;
+    flex-grow: 1;
+    flex-basis: 200px;
 }
 
 .values__cards-wrapper {
-    flex-basis: 60%;
+    flex-grow: 1;
+    flex-basis: 500px;
 }
 
 .values__cards {
@@ -61,6 +70,7 @@
         line-height: 150%;
         font-size: 24px;
         margin-bottom: 12px;
+        text-wrap: nowrap;
     }
 }
 .values__cards::before {
@@ -75,6 +85,7 @@
 
 .achievements__cards {
     display: flex;
+    flex-wrap: wrap;
     gap: 40px;
     margin-top: 80px;
     > * {
@@ -143,9 +154,14 @@
 .team__cards {
     @extend .reg-section;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: 15px;
+    > * {
+        flex-grow: 1;
+        max-width: 450px;
+        flex-basis: 300px;
+    }
 }
 
 .team__card {
@@ -155,11 +171,14 @@
     display: flex;
     text-align: center;
     flex-direction: column;
-    flex-basis: 250px;
     justify-content: space-between;
     position: relative;
-    .team__card-img {
+    .team__card-img-block {
         margin-bottom: 50px;
+        position: relative;
+    }
+    .team__card-img {
+        width: 100%;
     }
     .team__card-name {
         margin: 0;
@@ -178,7 +197,6 @@
         align-items: center;
         justify-content: space-between;
         padding: 14px;
-        // padding-inline-end: 12px;
         padding-inline-start: 24px;
         p {
             margin: 0;
@@ -203,9 +221,10 @@
     .team__card-twtr-btn {
         position: absolute;
         $width: 76px;
+        $height: 52px;
         width: $width;
-        height: 52px;
-        top: 50%;
+        height: $height;
+        top: calc(100% - ($height / 2));
         left: calc(50% - ($width / 2));
         background-color: var(--color-purple60);
         border-radius: 50px;
@@ -240,9 +259,20 @@
         border-radius: 12px;
     }
     .clients__card-head {
+        gap: 15px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
+
+        > * {
+            flex-grow: 1;
+        }
+    }
+
+    .clients__card-button {
+        flex-basis: 60px;
+        text-align: center;
     }
 
     .clients__card-title-block .parag {

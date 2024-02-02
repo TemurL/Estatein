@@ -48,7 +48,6 @@ html {
 
 body {
     margin: 0;
-    overflow-x: hidden;
 }
 
 a {
@@ -78,6 +77,10 @@ hr {
 ul {
     list-style: none;
     padding: 0;
+}
+
+.scroll-lock {
+    overflow: hidden;
 }
 
 .input {
@@ -278,6 +281,37 @@ a.button {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.header__mob-menu {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: 0.3s;
+
+    &.open {
+        grid-template-rows: 1fr;
+    }
+
+    > * {
+        min-height: 0;
+    }
+}
+
+.mob-nav {
+    list-style: none;
+    padding-inline: var(--container-padding-inline);
+    text-align: end;
+
+    > *:first-child {
+        margin-top: 20px;
+    }
+    .mob-nav__li {
+        display: inline-block;
+        font-size: 2rem;
+        margin-block: 5px;
+        padding-block: 5px;
+    }
 }
 
 .reg-section {
