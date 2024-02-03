@@ -72,7 +72,7 @@ export const uniSlider = (n) => {
                     maxHeight = slide.clientHeight;
                 };
             });
-            if (window.outerWidth <= 768) {
+            if (window.innerWidth <= 768) {
                 if (slide.classList.contains('show_2')) {
                     slide.classList.remove('show_2')
                     slide.classList.remove('show');

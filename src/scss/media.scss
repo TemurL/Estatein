@@ -36,6 +36,14 @@
     .ring-text__arrow {
         --arrow-width: 58px;
     }
+
+    .services-values__cards,
+    .management__cards {
+        .services-values__card-title,
+        .management__card-title {
+            font-size: 18px;
+        }
+    }
 }
 @media screen and (max-width: 1024px) {
     :root {
@@ -72,6 +80,11 @@
 
     .CTA {
         background-image: url(../img/backgrouds/footer-back-left.png);
+    }
+
+    .services-values__cards,
+    .management__cards {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 @media screen and (max-width: 768px) {
@@ -159,20 +172,39 @@
         .search-form__text-input-block {
             align-items: stretch;
             border-radius: 12px;
+            padding: 10px;
             .search-form__text-input {
                 font-size: 1rem;
             }
-        }
-        .search-form__text-input-block .search-form__button {  
-            aspect-ratio: 1;
-            padding: 0;
-            img {
-                margin-inline-end: 0;
+            .search-form__button {  
+                aspect-ratio: 1;
+                padding: 0;
+                max-width: 50px;
+                img {
+                    margin-inline-end: 0;
+                }
+                span {    
+                    display: none;
+                }
             }
-            span {    
-                display: none;
-            }
         }
+    }
+
+    .services-values__cards,
+    .management__cards {
+        grid-template-columns: repeat(1, 1fr);
+        .services-values__card_wide,
+        .management__card_wide {
+            grid-column: auto;
+        }
+    }
+
+    .investments__cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .investments__card-title {
+        text-wrap: wrap;
     }
 }
 @media screen and (max-width: 480px) {
