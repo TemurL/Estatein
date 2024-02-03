@@ -27,7 +27,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
         gap: 15px;
         background-color: var(--color-grey08);
 
@@ -188,6 +188,10 @@
         border-top-left-radius: 0;
         opacity: 0;
         transition: 0.3s;
+        display: flex;
+        gap: 1rem;
+        align-items: baseline;
+        flex-wrap: wrap;
         &.show {
             opacity: 1;
             visibility: visible;
@@ -212,6 +216,7 @@
         border: none;
         padding: 0;
         display: flex;
+        flex-wrap: wrap;
         gap: 16px;
         label {
             @extend .input;
@@ -249,6 +254,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
     
     input[type="checkbox"] {
         accent-color: var(--color-purple60);

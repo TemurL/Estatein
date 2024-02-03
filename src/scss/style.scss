@@ -48,6 +48,7 @@ html {
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 a {
@@ -94,7 +95,6 @@ ul {
     color: var(--color-grey60);
     line-height: 150%;
     font-weight: 500;
-    height: 72px;
     padding: 20px;
     text-wrap: nowrap;
     outline: none;

@@ -5,7 +5,7 @@ export const pricingRange = () => {
     const rangeBlock = document.getElementsByClassName('search-form__range-block')[0];
 
     selectElement.addEventListener('click', (e) => {
-        rangeBlock.classList.add('show');
+        rangeBlock.classList.toggle('show');
     })
     selectElement.addEventListener('mouseleave', (e) => {
         rangeBlock.classList.remove('show');

@@ -6,7 +6,7 @@ export const budgetRange = () => {
     const budget = budgetBlock.querySelector('.contact-form-1__budget');
 
     budgetBlock.addEventListener('click', (e) => {
-        budget.classList.add('show');
+        budget.classList.toggle('show');
     })
     budgetBlock.addEventListener('mouseleave', (e) => {
         budget.classList.remove('show');
