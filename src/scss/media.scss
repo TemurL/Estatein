@@ -206,6 +206,9 @@
     .investments__card-title {
         text-wrap: wrap;
     }
+    .photos__row {
+        min-height: 110px;
+    }
 }
 @media screen and (max-width: 480px) {
     :root {
@@ -244,5 +247,21 @@
         .clues__card-img {
             width: 48px;
         }
+    }
+
+    .connect__form {
+        border: none;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .photos__wrapper {
+        padding: 20px;
+    }
+
+    .photos__row {
+        min-height: 70px;
+        gap: 10px;
+        margin-block: 10px;
     }
 }

@@ -6,6 +6,150 @@
     <body>
         @@include('./html/header.html')
         <main>
+            <section class="reg-section contact-hero">
+                <div class="container">
+                    <div class="contact-hero__content">
+                        <h2 class="title contact-hero__title">Get in Touch with Estatein</h2>
+                        <p class="parag contact-hero__parag">Welcome to Estatein's Contact Us page. We're here to assist you with any inquiries, requests, or feedback you may have. Whether you're looking to buy or sell a property, explore investment opportunities, or simply want to connect, we're just a message away. Reach out to us, and let's start a conversation.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="clues" id="clues">
+                <div class="clues__cards">
+                    <a href="mailto:info@estatein.com" class="clues__card">
+                        <img class="clues__card-img" src="@img/icons/Icon-Container-Mail.svg" alt="">
+                        <p class="clues__card-text">info@estatein.com</p>
+                        <img class="clues__card-arrow" src="@img/icons/Icon-grey-arrow.svg" alt="">
+                    </a>
+                    <a href="tel: +1 (123) 456-7890" class="clues__card">
+                        <img class="clues__card-img" src="@img/icons/Icon-Container-Tel.svg" alt="">
+                        <p class="clues__card-text">+1 (123) 456-7890</p>
+                        <img class="clues__card-arrow" src="@img/icons/Icon-grey-arrow.svg" alt="">
+                    </a>
+                    <a href="https://www.google.com/maps/place/Main+Headquarters/@41.0241941,-81.7299126,17z/data=!3m1!4b1!4m6!3m5!1s0x8830cd87c839256b:0x5fcdef2083cd7aae!8m2!3d41.0241941!4d-81.7299126!16s%2Fg%2F11tsvjhffq?entry=ttu" class="clues__card">
+                        <img class="clues__card-img" src="@img/icons/Icon-Container-location.svg" alt="">
+                        <p class="clues__card-text">Main Headquarters</p>
+                        <img class="clues__card-arrow" src="@img/icons/Icon-grey-arrow.svg" alt="">
+                    </a>
+                    <div href="#clues" class="clues__card">
+                        <img class="clues__card-img" src="@img/icons/Icon-Container-logo-for-cards.svg" alt="">
+                        <p class="clues__card-text"><a class="inline-link" href="https://www.instagram.com">Instagram</a><a class="inline-link" href="https://www.linkedin.com/">LinkedIn</a><a class="inline-link" href="https://www.facebook.com/">Facebook</a></p>
+                        <img class="clues__card-arrow" src="@img/icons/Icon-grey-arrow.svg" alt="">
+                    </div>
+                </div>
+            </section>
+            <section class="reg-section connect">
+                <div class="container">
+                    <h2 class="title reg-section__title connect__title">Let's Connect</h2>
+                    <p class="parag connect__parag">We're excited to connect with you and learn more about your real estate goals. Use the form below to get in touch with Estatein. Whether you're a prospective client, partner, or simply curious about our services, we're here to answer your questions and provide the assistance you need.</p>
+                    <form class="form connect__form" id="contact-form-2" action="" method="get">
+                        <div class="form__row">
+                            <div class="form__item">
+                                <label for="contact-form-2__first-name">First Name</label>
+                                <input class="input contact-form-2__input" type="text" id="contact-form-2__first-name" name="contact-form1__first-name" placeholder="Enter First Name" autocomplete="off">
+                            </div>
+                            <div class="form__item">
+                                <label for="contact-form-2__last-name">Last Name</label>
+                                <input class="input contact-form-2__input" type="text" id="contact-form-2__last-name" name="contact-form-2__last-name" placeholder="Enter Last Name" autocomplete="off">
+                            </div>
+                            <div class="form__item">
+                                <label for="contact-form-2__name">Email</label>
+                                <input class="input contact-form-2__input" type="email" id="contact-form-2__email" name="contact-form-2__email" placeholder="Enter First Email" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form__row">
+                            <div class="form__item">
+                                <label for="contact-form-2__phone">Phone</label>
+                                <input class="input contact-form-2__input" type="tel" id="contact-form-2__phone" name="contact-form-2__phone" placeholder="Enter Phone Number" autocomplete="off">
+                            </div>
+                            <div class="form__item">
+                                <label for="contact-form-2__type">Inquiry Type</label>
+                                <select name="contact-form-2__type" id="contact-form-2__type">
+                                    <option value="" selected style="display: none;">Select Inquiry Type</option>
+                                    <option value="villa">Villa</option>
+                                    <option value="apartment">Apartment</option>
+                                    <option value="house">House</option>
+                                </select>
+                            </div>
+                            <div class="form__item">
+                                <label for="contact-form-2__bathrooms">No. of Bathrooms</label>
+                                <select name="contact-form-2__bathrooms" id="contact-form-2__bathrooms">
+                                    <option value="" selected style="display: none;">Select no. of Bedrooms</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__row">
+                            <div class="form__item">
+                                <label for="contact-form-2__message">Message</label>
+                                <textarea name="contact-form-2__message" id="contact-form-2__message" cols="30" rows="10" placeholder="Enter your Message here.." maxlength="250"></textarea>
+                            </div>
+                        </div>
+                        <div class="form__footer">
+                            <div class="form__argee-block">
+                                <input type="checkbox" name="agree" class="form__argee" id="form__argee">
+                                <label for="form__argee">I agree with <a href="" class="inline-link">Terms of Use</a> and <a href="" class="inline-link">Privacy Policy</a></label>
+                            </div>
+                            <button class="form__submit button button_filled">Send Your Message</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section class="reg-section office">
+                <div class="container">
+                    <h2 class="title reg-section__title office__title">Discover Our Office Locations</h2>
+                    <p class="parag office__parag">Estatein is here to serve you across multiple locations. Whether you're looking to meet our team, discuss real estate opportunities, or simply drop by for a chat, we have offices conveniently located to serve your needs. Explore the categories below to find the Estatein office nearest to you</p>
+                    <div class="office__cards">
+                        <div class="office__card">
+                            <span class="office__card-top-text">Main Headquarters</span>
+                            <h3 class="office__card-title">123 Estatein Plaza, City Center, Metropolis</h3>
+                            <p class="parag office__card-parag">Our main headquarters serve as the heart of Estatein. Located in the bustling city center, this is where our core team of experts operates, driving the excellence and innovation that define us.</p>
+                            <div class="office__card-tags">
+                                <a href="mailto:info@estatein.com" class="office__card-tag"><img src="@img/icons/Icon-white-email.svg" alt="">info@estatein.com</a>
+                                <a href="tel:+1 (123) 456-7890" class="office__card-tag"><img src="@img/icons/Icon-white-phone.svg" alt="">+1 (123) 456-7890</a>
+                                <a href="https://www.google.com/maps/place/Main+Headquarters/@41.0241941,-81.7299126,17z/data=!3m1!4b1!4m6!3m5!1s0x8830cd87c839256b:0x5fcdef2083cd7aae!8m2!3d41.0241941!4d-81.7299126!16s%2Fg%2F11tsvjhffq?entry=ttu" class="office__card-tag"><img src="@img/icons/Icon-location-white.svg" alt="">Metropolis</a>
+                            </div>
+                            <button class="button button_filled office__button">Get Direction</button>
+                        </div>
+                        <div class="office__card">
+                            <span class="office__card-top-text">Regional Offices</span>
+                            <h3 class="office__card-title">456 Urban Avenue, Downtown District, Metropolis</h3>
+                            <p class="parag office__card-parag">Estatein's presence extends to multiple regions, each with its own dynamic real estate landscape. Discover our regional offices, staffed by local experts who understand the nuances of their respective markets.</p>
+                            <div class="office__card-tags">
+                                <a href="mailto:info@estatein.com" class="office__card-tag"><img src="@img/icons/Icon-white-email.svg" alt="">info@estatein.com</a>
+                                <a href="tel:+1 (123) 456-7890" class="office__card-tag"><img src="@img/icons/Icon-white-phone.svg" alt="">+1 (123) 456-7890</a>
+                                <a href="https://www.google.com/maps/place/Main+Headquarters/@41.0241941,-81.7299126,17z/data=!3m1!4b1!4m6!3m5!1s0x8830cd87c839256b:0x5fcdef2083cd7aae!8m2!3d41.0241941!4d-81.7299126!16s%2Fg%2F11tsvjhffq?entry=ttu" class="office__card-tag"><img src="@img/icons/Icon-location-white.svg" alt="">Metropolis</a>
+                            </div>
+                            <button class="button button_filled office__button">Get Direction</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="photos">
+                <div class="container">
+                    <div class="photos__wrapper">
+                        <div class="photos__row" id="row_1">
+                            <div class="photos__photo" id="photo_1"></div>
+                            <div class="photos__photo" id="photo_2"></div>
+                        </div>
+                        <div class="photos__row" id="row_2">
+                            <div class="photos__photo" id="photo_3"></div>
+                            <div class="photos__photo" id="photo_4"></div>
+                            <div class="photos__photo" id="photo_5"></div>
+                        </div>
+                        <div class="photos__row" id="row_3">
+                            <div class="reg-section photos__text-block">
+                                <h2 class="reg-section__title title">Explore Estatein's World</h2>
+                                <p class="parag">Step inside the world of Estatein, where professionalism meets warmth, and expertise meets passion. Our gallery offers a glimpse into our team and workspaces, inviting you to get to know us better.</p>
+                            </div>
+                            <div class="photos__photo" id="photo_6"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         @@include('./html/footer.html')
         <script src="js/app.min.js"></script>
