@@ -1,5 +1,6 @@
 import { budgetRange } from './modules/budgetRange.js';
 import * as TLFunc from './modules/functions.js'
+import { jqueryTry } from './modules/jqueryTry.js';
 import { methodRadio } from './modules/methodRadio.js';
 import { openMobMenu } from './modules/openMobMenu.js';
 import { openPropCardParag } from './modules/openPropCardParag.js';
@@ -22,3 +23,4 @@ budgetRange();
 methodRadio();
 openMobMenu();
 propBtn();
+jqueryTry();
