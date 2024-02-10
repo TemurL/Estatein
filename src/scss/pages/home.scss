@@ -151,6 +151,7 @@
 
 .slider {
     @extend .reg-section;
+    outline: none;
 }
 
 .slider__cards {

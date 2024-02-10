@@ -19,14 +19,14 @@ export const uniSlider = (n) => {
         let sliderCards = e.target.parentElement.parentElement.parentElement.children[0];
         let allCards = Array.from(sliderCards.children);
         let activeCards = sliderCards.querySelectorAll('.show');
-        activeCards.forEach(activeCard => {
+        activeCards.forEach((activeCard, localIndex) => {
             let index = Array.from(allCards).indexOf(activeCard);
             let showClass = activeCard.classList[3];
             activeCard.classList.remove(showClass);
-            if (Array.from(activeCards).indexOf(activeCard) == 0) {
+            if (localIndex == 0) {
                 allCards[index - 1].classList.add('show');
             }
-            if (Array.from(activeCards).indexOf(activeCard) == activeCards.length - 1) {
+            if (localIndex == activeCards.length - 1) {
                 allCards[index].classList.remove('show');
                 allCards[index].setAttribute('position', 'after');
             }
@@ -44,14 +44,15 @@ export const uniSlider = (n) => {
         let sliderCards = e.target.parentElement.parentElement.parentElement.children[0];
         let allCards = Array.from(sliderCards.children);
         let activeCards = sliderCards.querySelectorAll('.show');
-        activeCards.forEach(activeCard => {
+        activeCards.forEach((activeCard, localIndex) => {
             let index = Array.from(allCards).indexOf(activeCard);
+            console.log(index, localIndex);
             let showClass = activeCard.classList[3];
             activeCard.classList.remove(showClass);
-            if (Array.from(activeCards).indexOf(activeCard) == activeCards.length - 1) {
+            if (localIndex == activeCards.length - 1) {
                 allCards[index + 1].classList.add('show');
             }
-            if (Array.from(activeCards).indexOf(activeCard) == 0) {
+            if (localIndex == 0) {
                 allCards[index].classList.remove('show');
                 allCards[index].setAttribute('position', 'before');
             }
@@ -62,7 +63,7 @@ export const uniSlider = (n) => {
         }
         increaseNumber(e);
     }
-    const resizeObserverForSliders = new ResizeObserver((entries, observer) => {
+    const resizeObserverForSliders = new ResizeObserver((entries) => {
         entries.forEach(entry => {
             let slide = entry.target;
             let slider = slide.parentElement;
@@ -95,7 +96,30 @@ export const uniSlider = (n) => {
                 slider.children.length - slider.querySelectorAll('.show').length + 1
             }`;
         })
-    })
+    });
+    const keydownHandler = (e) => {
+        if (e.keyCode === 37) {
+            e.target.parentElement.parentElement.querySelector('.slider__prev-btn').click();
+        }
+        if (e.keyCode === 39) {
+            e.target.parentElement.parentElement.querySelector('.slider__next-btn').click();
+        }
+
+    }
+    const intersectionObserverCallBack = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.addEventListener('keydown', keydownHandler);
+                entry.target.focus();
+            } else {
+                entry.target.removeEventListener('keydown', keydownHandler);
+            }
+        })
+    }
+    const intersectionObserverOptions = {
+        threshold: 0.8,
+    }
+    const intersectionObserver = new IntersectionObserver(intersectionObserverCallBack, intersectionObserverOptions)
     for (let i = 0; i < slider.length; i++) {
         let totalPages = slider[i].querySelector('.slider__total-pages-number');        
         totalPages.textContent = `${
@@ -106,6 +130,11 @@ export const uniSlider = (n) => {
 
         slider[i].querySelector('.slider__prev-btn').addEventListener('click', prevBtnAct);
         slider[i].querySelector('.slider__next-btn').addEventListener('click', nextBtnAct);
+
+        let prevBtn = slider[i].querySelector('.slider__prev-btn');
+        let nextBtn = slider[i].querySelector('.slider__next-btn')
+
+        intersectionObserver.observe(slider[i])
     
         slider[i].children[0].addEventListener('touchstart', handleTouchStart, false);
         slider[i].children[0].addEventListener('touchmove', handleTouchMove, false);
