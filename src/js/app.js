@@ -6,6 +6,7 @@ import { openMobMenu } from './modules/openMobMenu.js';
 import { openPropCardParag } from './modules/openPropCardParag.js';
 import { pricingRange } from './modules/pricingRange.js';
 import { createPropertyPage, propBtn } from './modules/propBtn.js';
+import { propPhotoSlider } from './modules/propPhotoSlider.js';
 import { pushMessage } from './modules/pushMessage.js'
 import { ringTextRender } from './modules/ringTextRender.js';
 import { setActiveNavLi } from './modules/setActiveNavLi.js';
@@ -24,3 +25,4 @@ methodRadio();
 openMobMenu();
 propBtn();
 jqueryTry();
+propPhotoSlider();

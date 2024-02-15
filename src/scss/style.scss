@@ -333,13 +333,13 @@ a.button {
             background-repeat: no-repeat;
         }
     }
+}
 
-    .reg-section__row { 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-    }
+.reg-section__row { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .CTA {
@@ -474,4 +474,5 @@ a.button {
 @import './pages/properties.scss';
 @import './pages/sevrices.scss';
 @import './pages/contact.scss';
+@import './pages/seaside-serenity-villa.scss';
 @import './media.scss';

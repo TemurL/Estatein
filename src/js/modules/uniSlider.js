@@ -46,7 +46,6 @@ export const uniSlider = (n) => {
         let activeCards = sliderCards.querySelectorAll('.show');
         activeCards.forEach((activeCard, localIndex) => {
             let index = Array.from(allCards).indexOf(activeCard);
-            console.log(index, localIndex);
             let showClass = activeCard.classList[3];
             activeCard.classList.remove(showClass);
             if (localIndex == activeCards.length - 1) {
