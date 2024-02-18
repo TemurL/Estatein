@@ -16,9 +16,11 @@ export const propPhotoSlider = () => {
         // activePhotosDiv.innerHTML = '';
         activePhotosDiv.querySelectorAll('.prop-photos__slider-active-photo').forEach((photo, i) => {
             photo.classList.add('small');
-            try {
-                setTimeout(() => activePhotosDiv.removeChild(photo), 650);
-            } catch {}
+            setTimeout(() => {
+                try {
+                    activePhotosDiv.removeChild(photo)
+                } catch {}
+            }, 650);
         })
         paths.forEach((path, i) => {
             const pathToBig = path.replace('Imageprop', 'big/Imageprop');
@@ -71,7 +73,8 @@ export const propPhotoSlider = () => {
     nextBtn.addEventListener('click', btnClickHandker);
     prevBtn.addEventListener('click', btnClickHandker);
     Array.from(miniPhotosDiv.children).forEach((el ,i) => {
-        el.addEventListener('click', () => {
+        el.addEventListener('click', (e) => {
+            if (e.currentTarget.classList.contains('selected')) return
             const activeMinis = miniPhotosDiv.querySelectorAll('.selected');
             activeMinis.forEach(el => el.classList.remove('selected'));
             allMinis[i].classList.add('selected');
