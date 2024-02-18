@@ -362,6 +362,22 @@ a.button {
     }
 }
 
+.note {
+    background-color: var(--color-grey10);
+    border-radius: 12px;
+    border: var(--border-light);
+    padding: 20px 50px;
+    .note__mark {
+        display: inline-block;
+        padding-inline-end: 20px;
+        margin-inline-end: 20px;
+        border-inline-end: var(--border-light);
+        color: white;
+        font-size: 24px;
+        line-height: 150%;
+    }
+}
+
 
 .footer__links > .container {
     @extend .reg-section;
