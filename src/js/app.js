@@ -10,6 +10,8 @@ import { propPhotoSlider } from './modules/propPhotoSlider.js';
 import { pushMessage } from './modules/pushMessage.js'
 import { ringTextRender } from './modules/ringTextRender.js';
 import { setActiveNavLi } from './modules/setActiveNavLi.js';
+import { testFetch } from './modules/testFetch.js';
+import { testDPF } from './modules/testPDF.js';
 import { uniSlider } from './modules/uniSlider.js';
 
 TLFunc.isWebp()
@@ -26,3 +28,5 @@ openMobMenu();
 propBtn();
 jqueryTry();
 propPhotoSlider();
+// testFetch();
+testDPF();
