@@ -5,17 +5,16 @@ export const testDPF = () => {
 
     if (!btn) return
     // Default export is a4 paper, portrait, using millimeters for units
-    const doc = new jsPDF();
+    const doc = new jsPDF('l', 'px');
 
-    doc.setFontSize(25)
-    doc.setTextColor('red')
-    doc.text("Hello world!", 10, 50);
-    doc.setFontSize(18)
-    for (let i = 0; i < 5; i++) {
-        doc.text('text', 10, 60 + (i * 10));
+    let options = {
+        callback: () => {
+            doc.save("firstTry.pdf")
+        },
+        width: 1000,
+        windowWidth: 1000
     }
-    console.log(doc);
-    btn.addEventListener('click', () => {doc.save("firstTry.pdf")});
 
-    console.log(doc);
+    doc.html(document.body, options);
+
 }
